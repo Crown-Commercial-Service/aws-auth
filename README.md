@@ -8,7 +8,7 @@ If you defined AWS profiles in ~/.aws/credentials and ~/.aws/config the script w
 
 ## Dependencies
 
-The AWS cli (>= 1.10.18) and jq must be installed on your system.
+The AWS cli (>= 1.14) and jq must be installed on your system.
 
 ```
 pip install awscli

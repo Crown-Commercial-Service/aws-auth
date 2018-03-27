@@ -12,7 +12,7 @@ if [ -n "$AWS_PROFILE" ]; then
   if [ -n "$source_profile" ]; then
     role_arn="$(aws configure get role_arn --profile "$AWS_PROFILE")"
     mfa_serial="$(aws configure get mfa_serial --profile "$AWS_PROFILE")"
-    cache_file=${CACHE_DIR}/$(echo -n "{\"RoleArn\": \"$role_arn\", \"SerialNumber\": \"$mfa_serial\"}" | openssl dgst -sha1).json
+    cache_file=${CACHE_DIR}/$(echo -n "{\"RoleArn\": \"$role_arn\", \"SerialNumber\": \"$mfa_serial\"}" | openssl dgst -sha1 | sed 's/(stdin)= //').json
     AWS_DEFAULT_REGION=$(aws configure get region --profile "$source_profile" || echo "")
     AWS_ACCESS_KEY_ID="$(cat $cache_file | jq -r ".Credentials.AccessKeyId")"
     AWS_SECRET_ACCESS_KEY="$(cat $cache_file | jq -r ".Credentials.SecretAccessKey")"

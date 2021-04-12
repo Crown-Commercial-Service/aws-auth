@@ -19,7 +19,7 @@ For installing jq please follow the instructions: https://stedolan.github.io/jq/
 ## Installation
 
 ```
-sudo curl -s https://raw.githubusercontent.com/alphagov/aws-auth/master/aws-auth.sh -o /usr/local/bin/aws-auth
+sudo curl -s https://raw.githubusercontent.com/alphagov/aws-auth/main/aws-auth.sh -o /usr/local/bin/aws-auth
 sudo chmod +x /usr/local/bin/aws-auth
 ```
 
